@@ -20,5 +20,6 @@ int main(int argc, const char * argv[]) {
     std::vector<int> d = {6, 4, 2, 6};
     
     Calibrator<int> calibrator = Calibrator<int>(v, 18, 4, d, 6);
+    calibrator.build();
     return 0;
 }

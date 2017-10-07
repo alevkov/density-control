@@ -9,7 +9,6 @@
 #ifndef Calibrator_hpp
 #define Calibrator_hpp
 
-#include <stdio.h>
 #include "includes.h"
 
 template <typename T>
@@ -47,11 +46,22 @@ public:
     __size(N),
     __page_count(M),
     __max_page_size(D),
-    __sizes_of_pages(d) { __build_ctree(); }
+    __sizes_of_pages(d) { }
     
     inline std::shared_ptr<CNode<T>> get_root() { return __root; };
+    void build();
     void balance();
 };
+
+# pragma mark - public
+
+template<typename T>
+void Calibrator<T>::build()
+{
+    __build_ctree();
+}
+
+#pragma mark - private
 
 template <typename T>
 int Calibrator<T>::__density_of_range(std::pair<T, T> range)
@@ -92,7 +102,7 @@ void Calibrator<T>::__build_ctree_internal(std::shared_ptr<CNode<T>> __root)
     }
     
     std::shared_ptr<CNode<T>> right_child = std::make_shared<CNode<T>>(-1),
-                              left_child = std::make_shared<CNode<T>>(-1);
+    left_child = std::make_shared<CNode<T>>(-1);
     
     right_child->addr_range.first = __root->addr_range.first;
     right_child->addr_range.second = (__root->addr_range.first + __root->addr_range.second) / 2;
@@ -104,5 +114,6 @@ void Calibrator<T>::__build_ctree_internal(std::shared_ptr<CNode<T>> __root)
     left_child->density = __density_of_range(left_child->addr_range);
     __build_ctree_internal(left_child);
 }
+
 
 #endif /* Calibrator_hpp */

@@ -8,5 +8,3 @@
 
 #include "Calibrator.hpp"
 
-
-
