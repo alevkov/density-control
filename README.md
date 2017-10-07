@@ -10,3 +10,4 @@
 Department of Computer Science, State University of New York,
 Albany, New York 12222
 1992 Academic Press, Inc. 
+[Link to research paper](https://www.sciencedirect.com/science/article/pii/089054019290034D)
