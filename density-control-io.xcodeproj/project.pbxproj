@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D98950E81F87F1A7005755E0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D98950E71F87F1A7005755E0 /* main.cpp */; };
+		D98950F01F87F1D5005755E0 /* Calibrator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D98950EE1F87F1D5005755E0 /* Calibrator.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,9 @@
 /* Begin PBXFileReference section */
 		D98950E41F87F1A7005755E0 /* density-control-io */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "density-control-io"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98950E71F87F1A7005755E0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		D98950EE1F87F1D5005755E0 /* Calibrator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Calibrator.cpp; sourceTree = "<group>"; };
+		D98950EF1F87F1D5005755E0 /* Calibrator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Calibrator.hpp; sourceTree = "<group>"; };
+		D98950F11F87FE49005755E0 /* includes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = includes.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,9 @@
 			isa = PBXGroup;
 			children = (
 				D98950E71F87F1A7005755E0 /* main.cpp */,
+				D98950EE1F87F1D5005755E0 /* Calibrator.cpp */,
+				D98950EF1F87F1D5005755E0 /* Calibrator.hpp */,
+				D98950F11F87FE49005755E0 /* includes.h */,
 			);
 			path = "density-control-io";
 			sourceTree = "<group>";
@@ -120,6 +127,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D98950F01F87F1D5005755E0 /* Calibrator.cpp in Sources */,
 				D98950E81F87F1A7005755E0 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
