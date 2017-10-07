@@ -10,7 +10,8 @@
 #include "Calibrator.hpp"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
+
+    // we use indeces as addresses, so the type is 'int'
     std::vector<int> v = {1, 2, 3, 4, 7, 9,
                          11, 13, 17, 13,
                          19, 25,
