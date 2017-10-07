@@ -18,10 +18,11 @@ class CNode
     float density;
     std::pair<T, T> addr_range;
     std::shared_ptr<CNode> left, right;
-    CNode(uint d) : density(d), left(nullptr), right(nullptr) {}
+    CNode(float d) : density(d), left(nullptr), right(nullptr) {}
 };
 
-template <typename T>
+/* T is address type, U is data type */
+template <typename T, typename U>
 class Calibrator
 {
     
@@ -31,7 +32,7 @@ private:
     int __page_count;
     int __max_page_size;
     std::vector<int> __sizes_of_pages;
-    std::vector<T> __data;
+    std::vector<U> __data;
     std::shared_ptr<CNode<T>> __root = nullptr;
     
     float __density_of_range(std::pair<T, T> addr_range);
@@ -56,16 +57,16 @@ public:
 
 # pragma mark - public
 
-template<typename T>
-void Calibrator<T>::build()
+template<typename T, typename U>
+void Calibrator<T, U>::build()
 {
     __build_ctree();
 }
 
 #pragma mark - private
 
-template <typename T>
-float Calibrator<T>::__density_of_range(std::pair<T, T> range)
+template <typename T, typename U>
+float Calibrator<T, U>::__density_of_range(std::pair<T, T> range)
 {
     float density = -1.0;
     if (range.first == range.second) {
@@ -84,8 +85,8 @@ float Calibrator<T>::__density_of_range(std::pair<T, T> range)
     return density;
 }
 
-template <typename T>
-void Calibrator<T>::__build_ctree()
+template <typename T, typename U>
+void Calibrator<T, U>::__build_ctree()
 {
     std::pair<T, T> root_range = {0, __page_count - 1};
     if (!__root) {
@@ -97,8 +98,8 @@ void Calibrator<T>::__build_ctree()
     __build_ctree_internal(__root);
 }
 
-template <typename T>
-void Calibrator<T>::__build_ctree_internal(std::shared_ptr<CNode<T>> __root)
+template <typename T, typename U>
+void Calibrator<T, U>::__build_ctree_internal(std::shared_ptr<CNode<T>> __root)
 {
     if (__root->addr_range.first == __root->addr_range.second)
         return;

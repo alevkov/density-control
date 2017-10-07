@@ -30,7 +30,7 @@ int main(int argc, const char * argv[]) {
     std::vector<int> d1 = {6, 4, 2, 6};
     
     /* N = 8, M = 4, D = 6 */
-    Calibrator<int> calibrator = Calibrator<int>(v, 8, 4, d, 3);
+    Calibrator<int, int> calibrator = Calibrator<int, int>(v, 8, 4, d, 3);
     calibrator.build();
     return 0;
 }
