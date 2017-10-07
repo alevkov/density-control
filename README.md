@@ -6,7 +6,7 @@
 > log^2(M) divided by the page-size when the set of manipulated records has cardinality
 > O(M). 
 
-- DAN E. WILLARD
+-> DAN E. WILLARD
 Department of Computer Science, State University of New York,
 Albany, New York 12222
 1992 Academic Press, Inc. 
