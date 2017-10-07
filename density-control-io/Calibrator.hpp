@@ -76,6 +76,7 @@ int Calibrator<T>::__density_of_range(std::pair<T, T> range)
     for (; i <= range.second; ++i) {
         sum += __sizes_of_pages[i];
     }
+    
     density = sum / i;
     return density;
 }
